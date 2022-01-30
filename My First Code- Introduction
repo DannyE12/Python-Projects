@@ -1,0 +1,8 @@
+# Display the message “Hello everybody!! ;-)”.
+print("Hello everybody!! ;-)")
+# Display a blank line.
+print()
+# Display the message “My name is Joe Doe” (replace this name with your actual one).
+print("My Name is Danny Euresti\n")
+# Display a blank line.
+print("------")
