@@ -1,0 +1,20 @@
+#prints title "Acceleration calculator"
+string = "Acceleration Calculator"
+new_string = string.center(56)
+print(new_string)
+#defines a constant called MPH2MPS = 1609/3600
+MPH2MPS = float(1609/3600)
+#prompts the user to "please enter the velocity in miles per hour" and store it in the corresponding variable
+v = float(input("Please enter the velocity in miles per hour: "))
+#prompts the user to "please enter the time in seconds" and store in the corresponding variable 
+t = float(input("Please enter the time in seconds: "))
+#calculates Acceleration (using the constant) - MPH2MPS x (v/t) and saves the result rounded to one decimal digit
+a = round(float(MPH2MPS*(v/t)),1)
+#prints a message like the one below
+#"the acceleration required by a vehicle to reach"
+#"a velocity of",v,"miles per hour in",t,"seconds"
+#"is",a,"meters per second squared"
+print()
+print("the acceleration required by a vehicle to reach")
+print("a velocity of",("{:.2f}".format(v)),"miles per hour in",("{:.2f}".format(t)),"seconds")
+print("is",("{:.2f}".format(a)),"meters per second squared")
