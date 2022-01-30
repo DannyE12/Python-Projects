@@ -1,0 +1,93 @@
+# Define a function named calculate_change() that receives a change (an amount of cents) and calculates the quantity of
+# each type of coin and the total number of coins that are needed to provide the given change
+def calculate_change(cents):
+# Declare a variable to keep the count of coins that will be needed for the change and initialize it to zero
+    total = cents
+    if cents == 0:
+        change = 0
+# Calculate the quantity of quarters and the amount left using the formulas provided on handout
+    else:
+        quarter_qty = cents // 25
+        cents = cents % 25
+# Accumulate in the variable used to keep the count of coins, the quantity of quarters
+        coins = quarter_qty
+# Calculate the quantity of dimes and the amount left using the formulas provided on handout
+        dimes_qty = cents // 10
+        cents = cents % 10
+# Accumulate in the variable used to keep the count of coins, the quantity of dimes
+        coins = quarter_qty+dimes_qty
+# Calculate the quantity of nickels and the amount left using the formulas provided on handout
+        nickel_qty = cents // 5
+        cents = cents % 5
+# Accumulate in the variable used to keep the count of coins, the quantity of nickels
+        coins = quarter_qty+dimes_qty+nickel_qty
+# Calculate the quantity of pennies using the formulas provided on handout
+        penny_qty = cents % 5
+# Accumulate in the variable used to keep the count of coins, the quantity of pennies
+        coins = quarter_qty+dimes_qty+nickel_qty+penny_qty
+# Call function print_change() to display the results
+        print_change(total,coins, quarter_qty,dimes_qty,nickel_qty,penny_qty)
+#----------------------- This line is just to show where the function definition ends ------------------------------
+# Define a function named print_change() that receives an amount in cents, a quantity of coins, a quantity of quarters,
+# a quantity of dimes, a quantity of nickels, and a quantity of pennies
+def print_change(total,coins, quarter_qty,dimes_qty,nickel_qty,penny_qty):
+# Format the next output statements so that lines end with a blank space rather than the new line character and
+# the numbers are displayed using two columns
+# Print amount in cents and quantity of coins.
+    c1 = "cents:"
+    c2 = "coins"
+    print(("{:2.0f}".format(total)),c1,("{:2.0f}".format(coins)),c2,end=" " )
+# If quantity of quarters is 1 print the quantity of quarters followed by "Quarter"
+    if quarter_qty == 1:
+        print(("{:2.0f}".format(quarter_qty)),"Quarter",end=" ")
+# Otherwise if quantity of quarters is greater than 1 print the quantity of quarters followed by "Quarters" elif quarter_qty > 1:
+    elif quarter_qty > 1:
+        print(("{:2.0f}".format(quarter_qty)),"Quarters",end=" ")
+# If quantity of dimes is 1 print the quantity of dimes followed by "Dime"
+    if dimes_qty == 1:
+        print(("{:2.0f}".format(dimes_qty)),"Dime",end=" ")
+# Otherwise if quantity of dimes is greater than 1 print the quantity of dimes followed by "Dimes"
+    elif dimes_qty > 1:
+        print(("{:2.0f}".format(dimes_qty)),"Dime",end=" ")
+# If quantity of nickels is 1 print the quantity of nickels followed by "Nickel"
+    if nickel_qty ==1:
+        print(("{:2.0f}".format(nickel_qty)),"Nickel",end=" ")
+# Otherwise if quantity of nickels is greater than 1 print the quantity of nickels followed by "Nickel"
+    elif nickel_qty > 1:
+        print(("{:2.0f}".format(nickel_qty)),"Nickels",end=" ")
+# If quantity of pennies is 1 print the quantity of pennies followed by "Penny"
+    if penny_qty == 1:
+        print(("{:2.0f}".format(penny_qty)),"Penny",end=" ")
+# Otherwise if quantity of pennies is greater than 1 print the quantity of pennies followed by "Pennies"
+    elif penny_qty > 1:
+        print(("{:2.0f}".format(penny_qty)),"Pennies",end=" ")
+# Print a new line character
+    print()
+#----------------------- This line is just to show where the function definition ends ------------------------------
+#Program starts here 
+#Initialize answer to 'y'
+answer = "y"
+#Loop while answer is 'y'
+while answer == "y":
+#Prompt the user to "Please enter the name of the file to be processed: "
+    file_name = input ("Please enter the name of the file to be processed: ")
+    print()
+#Open file specified by the user and assign it to a file variable
+    input_file = open(file_name, "r")
+#Print header of listing "List of changes to prepare"centered within 70 columns 
+    string = "List of changes to prepare"
+    new_string=string.center(70)
+    print(new_string)
+    print()
+#Use a for-loop to get each value from the file
+    for line in input_file:
+#For each line in the file
+# Call function to calculate the change. Pass it the content of the line read from the file (converted to int)
+        calculate_change(int(line))
+# Close the file
+    input_file.close()
+# Prompt the user "Do you want to process another file[y/n]? " and save it
+    print()
+    answer = input("Do you want to process another file [y/n]? ")
+    print()
+
