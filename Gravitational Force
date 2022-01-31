@@ -1,0 +1,20 @@
+#Define a constant G equal to 6.67x10-11 to represent the universal gravitation constant
+G = float(6.67*(10**-11))
+#Prompt the user to "Please enter mass of first object in kgs: "
+#Get the value from the keyboard and store it in the corresponding variable
+mass1 = float(input("Please enter mass of first object in kgs: "))
+#Prompt the user to "Please enter mass of second object in kgs: "
+#Get the value from the keyboard and store it in the corresponding variable
+mass2 = float(input("Please enter mass of second object in kgs: "))
+#Prompt the user to "Now, enter distance between objects in meters: "
+#Get the value from the keyboard and store it in the corresponding variable
+distance = float(input("Now, enter distance between objects in meters: "))
+#Calculate (G * mass1 * mass2) / distance^2 and assign the result to the corresponding variable
+gravForce = (G * mass1 * mass2)/distance**2
+#Print a message like the one below:
+#"For an object of mass: ", mass1, " kgs and another of mass: ", mass2, " kgs"
+#"at a distance of: ", distance, " meters"
+#"the gravitational force is: ", gravForce, " Newtons"
+print("For an object of mass:",mass1,"kgs and another of mass: ",mass2,"kgs")
+print("at a distance of: ",("{:1.2e}".format(distance)),"meters")
+print("the gravitational force is: ",(format(gravForce,".2f")),"Newtons")
