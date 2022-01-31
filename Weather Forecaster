@@ -1,0 +1,56 @@
+#Import the statistics module
+import statistics
+#Function definition
+#Define a function that receives the list with the temperatures and the month's name
+def print_values(temperatures, month_name):
+#Display the title: "List of temperatures corresponding to month", month_name 
+    print("List of temperatures corresponding to month:", month_name)
+    print()
+#Get the median using the statistics module and save it 
+    median_value = statistics.median(temperatures)
+#Display the lowest, highest, and median temperature
+    print("Lowest temperature: ", min(temperatures))
+    print("Highest temperature: ", max(temperatures))
+    print("The median for the month is: ", median_value)
+    print()
+#Initialize a counter for the day number 
+    day_number = 0
+#Use a loop to print the values in the list
+    for x in temperatures:
+        day_number += 1
+#Display for each day: "Day", day_number, temperature, and whether it is greater than, less than, 
+#or equal to the median (display day_number using 2 columns and temperature using 3 columns)
+        if x > median_value:
+            message = "is greater than median"
+        elif x < median_value:
+             message = "is less than median"
+        else:
+             message = "is equal to median"
+        print("Day", ("{:2.0f}:".format(day_number)),("{:3.0f}".format(x)), message)
+#----------------------- This line is just to show where the function definition ends ------------------------------
+# Program starts here
+# Initialize answer to 'y'
+answer = "y"
+#Increment the counter
+# Loop while answer is 'y'
+while answer == "y":
+# Prompt the user to "Please enter the name of the month to be processed: " and save it
+    month_name = input("Please enter the name of the month to be processed: ")
+# Prompt the user to "Please enter the name of the file to be processed: " and save it
+    file_name = input("Please enter the name of the file to be processed: ")
+    print()
+# Open file specified by the user and assign it to a file variable
+    input_file = open(file_name, "r")
+# Create an empty list
+    temperatures = []
+# Use a for-loop to get each value from the file
+    for x in input_file:
+# Append the content of the line read from the file (converted to int) at the end of the list
+        temperatures.append(int(x))
+# Call function the print the data
+    print_values(temperatures, month_name)
+# Close the file
+    input_file.close()
+# Prompt the user "Do you want to enter another grade[y/n]? " and save it
+    answer = input("Don you want to enter another month[y/n]? ")
+    print()
