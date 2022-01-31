@@ -1,0 +1,39 @@
+# Import module random
+import random 
+import sys
+# Initialize variable more to 'y'
+more = 'y'
+# while more = 'y'
+while more:
+# Prompt the user to "Ask the Magic 8 Ball a question: "
+    question = input("Ask the Magic 8 Ball a question: ")
+# Generate a random number within range 1..5
+    answers = random.randint(1, 5)
+    if question == 'n':
+        sys.exit
+# Pick the answer based on the number generated
+# if num = 1
+# answer is "Yes"
+    elif answers == 1:
+        print("Answer: Yes")
+# if num = 2
+# answer is "No"
+    elif answers == 2:
+        print("Answer: No")
+# if num = 3
+# answer is "Maybe"
+    elif answers == 3:
+        print("Answer: Maybe")
+# if num = 4
+# answer is "Ask again later"
+    elif answers == 4:
+        print ("Answer: Ask again later")
+# if num = 5
+# answer is "I don't know"
+    elif answers == 5:
+        print("Answer: I don't know")
+# Display the answer
+# Prompt the user to "Do you have more questions?: " and save it
+    another = input("Do you have more questions?: ")
+    if another[0].lower() == "n":
+        break
