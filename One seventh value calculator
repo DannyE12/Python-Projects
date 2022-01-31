@@ -1,0 +1,14 @@
+#Defines a constant called ONE_SEVENTH equal to 1/7
+ONE_SEVENTH = float (1/7)
+#Prompts the user to "Please enter your name: " and saves it
+user_name = input ("Please enter your name: ")
+#Prompts the user to "Enter a number and I will show the one seventh of its value: " and saves it
+N1 = float(input ("Enter a number and I will show the one seventh of its value: "))
+#Calculates the one seventh of the number (using the constant) and saves the result rounded to one decimal digit
+N2 = (round(float(N1*ONE_SEVENTH),1))
+#Greets the user displaying "Hi", name entered by the user
+#Prints a message like the one below (N2 and N1 are the values corresponding to the result and the number entered by the user respectively).
+#N2, " is one seventh of ", N1
+print()
+print ("Hi", user_name,)
+print(("{:7.2f}".format(N2)),"is one seventh of",("{:7.2f}".format(N1)))
