@@ -1,0 +1,42 @@
+# This Python program converts a numeric grade to its corresponding letter grade
+# Display title "Numeric grade to letter grade converter" (centered on 57 columns)
+string = "Numeric grade to letter grade converter"
+New_string=string.center(57)
+print(New_string)
+print()
+# Initialize answer to 'y'
+answer='y'
+# Loop while answer is 'y'
+while(answer =='y'):
+# Prompt the user to "Enter a numeric grade: " and save it
+      number=int(input("Enter a numeric grade: ")) 
+# If number is 9 or 10
+      if (number==9 or number==10):
+# Letter is A
+          letter='A'
+# If number is 8
+      elif(number==8):
+#Letter is B
+          letter='B'
+# If number is 7
+      elif(number==7):
+# Letter is C 
+          letter='C'
+# If number is 6 
+      elif(number==6):
+# Letter is D
+          letter='D'
+# If number is between 0 and 5
+      elif (number<=5 and number>=0):
+# Letter is F
+          letter='F'
+# Otherwise
+      else:
+# Letter is nonexistent!
+          letter = 'nonexistent!'
+# Display "For the numeric grade", number, "the corresponding letter is", letter
+      print("For the numeric grade", number, "the corresponding letter is", letter)
+# Prompt the user "Do you want to enter another grade[y/n]? " and save it
+      print()
+      answer=input("Do you want to convert another grade[y/n]? ") #ask the user ans value
+      print()
